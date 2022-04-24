@@ -1365,7 +1365,7 @@ class Env:
                     # row = np.zeros((self.dic_traffic_env_conf["NUM_ROW"],self.dic_traffic_env_conf["NUM_col"]))
                     for j in traffic_light_node_dict.keys():
                         location_2 = traffic_light_node_dict[j]['location']
-                        dist = AnonEnv._cal_distance(location_1, location_2)
+                        dist = Env._cal_distance(location_1, location_2)
                         row[inter_id_to_index[j]] = dist
                     if len(row) == top_k:
                         adjacency_row_unsorted = np.argpartition(row, -1)[:top_k].tolist()
@@ -1482,7 +1482,7 @@ class Env:
                     # row = np.zeros((self.dic_traffic_env_conf["NUM_ROW"],self.dic_traffic_env_conf["NUM_col"]))
                     for j in traffic_light_node_dict.keys():
                         location_2 = traffic_light_node_dict[j]['location']
-                        dist = AnonEnv._cal_distance(location_1, location_2)
+                        dist = Env._cal_distance(location_1, location_2)
                         row[inter_id_to_index[j]] = dist
                     if len(row) == top_k:
                         adjacency_row_unsorted = np.argpartition(row, -1)[:top_k].tolist()
