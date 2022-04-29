@@ -28,4 +28,4 @@ class MyAgent(Agent):
         super(MyAgent, self).__init__(
             dic_agent_conf, dic_traffic_env_conf, dic_path, intersection_id)
 
-        # TODO 
+        # TODO

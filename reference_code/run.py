@@ -9,7 +9,6 @@
 '''
 
 import os
-import json
 import shutil
 import random
 import pandas as pd
@@ -24,6 +23,9 @@ from updater import Updater
 from construct_sample import ConstructSample
 from model_pool import ModelPool
 import model_test
+import jpype
+import json
+
 
 class Run:
 
@@ -252,6 +254,8 @@ class Run:
 
 
     def run(self, multi_process=False):
+
+
 
         best_round, bar_round = None, None
 
@@ -521,3 +525,13 @@ class Run:
                                                           update_network_total_time,test_evaluation_total_time,
                                                           time.time()-round_start_time))
             f_time.close()
+
+
+if __name__ == '__main__':
+    if not jpype.isJVMStarted():
+        jpype.startJVM(classpath=['E:\graduation\lib\*', 'E:\graduation\SEUCityflow-1.0.0.jar'],
+                       convertStrings=True)  # jvmargs 根据实际数据设定
+    Engine = jpype.JClass('engine')
+    engine = Engine("E:\graduation\cityflow_config_file.json", 2)
+    engine.next_step()
+    print(engine.get_vehicle_count())

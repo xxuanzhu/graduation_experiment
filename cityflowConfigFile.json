@@ -1,0 +1,13 @@
+{
+  "interval": 1,
+  "seed": 47,
+  "dir": "E:/graduation/resources/manhattan/",
+  "roadnetFile": "manhattan.json",
+  "flowFile": "manhattan_31217.json",
+  "rlTrafficLight": true,
+  "laneChange": true,
+  "saveReplay": true,
+  "routeType": "DYNAMIC",
+  "roadnetLogFile": "replay_manhattan.json",
+  "replayLogFile": "replay_manhattan_31217_LaneChange.txt"
+}

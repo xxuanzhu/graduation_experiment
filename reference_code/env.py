@@ -16,7 +16,6 @@ from copy import deepcopy
 from multiprocessing import Process
 import numpy as np
 import pandas as pd
-import cityflow as engine
 
 
 class RoadNet:
