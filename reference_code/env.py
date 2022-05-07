@@ -1361,7 +1361,7 @@ class Env:
                 # TODO return with Top K results
                 if not self.dic_traffic_env_conf['ADJACENCY_BY_CONNECTION_OR_GEO']:  # use geo-distance
                     row = np.array([0] * total_inter_num)
-                    # row = np.zeros((self.dic_traffic_env_conf["NUM_ROW"],self.dic_traffic_env_conf["NUM_col"]))
+                    # row = np.zeros((self.dic_traffic_env_config["NUM_ROW"],self.dic_traffic_env_config["NUM_col"]))
                     for j in traffic_light_node_dict.keys():
                         location_2 = traffic_light_node_dict[j]['location']
                         dist = Env._cal_distance(location_1, location_2)
@@ -1478,7 +1478,7 @@ class Env:
                 # TODO return with Top K results
                 if not self.dic_traffic_env_conf['ADJACENCY_BY_CONNECTION_OR_GEO']:  # use geo-distance
                     row = np.array([0] * total_inter_num)
-                    # row = np.zeros((self.dic_traffic_env_conf["NUM_ROW"],self.dic_traffic_env_conf["NUM_col"]))
+                    # row = np.zeros((self.dic_traffic_env_config["NUM_ROW"],self.dic_traffic_env_config["NUM_col"]))
                     for j in traffic_light_node_dict.keys():
                         location_2 = traffic_light_node_dict[j]['location']
                         dist = Env._cal_distance(location_1, location_2)
