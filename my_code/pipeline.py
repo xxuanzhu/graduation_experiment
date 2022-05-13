@@ -60,7 +60,18 @@ class Pipeline:
                                            )
             generator_end_time = time.time()
             generator_total_time = generator_end_time - generator_start_time
-            print("==============  make samples =============")
+
+        if self.dic_experiment_config["MODEL_NAME"] in self.dic_experiment_config["LIST_MODEL_NEED_TO_UPDATE"]:
+            if multi_process:
+                pass
+            else:
+                # 更新model
+                self.updater_wrapper(cnt_round=0,
+                                     dic_agent_conf=self.dic_agent_config,
+                                     dic_exp_conf=self.dic_experiment_config,
+                                     dic_traffic_env_conf=self.dic_traffic_env_config,
+                                     dic_path=self.dic_save_path)
+
 
 
 
@@ -108,6 +119,7 @@ class Pipeline:
         shutil.copy(os.path.join(self.dic_save_path["PATH_TO_DATA"], self.dic_experiment_config["ROADNET_FILE"]),
                     os.path.join(path, self.dic_experiment_config["ROADNET_FILE"]))
 
+    # 与cityflow进行交互
     def generator_wrapper(self, cnt_round, cnt_generator, dic_path, dic_exp_conf, dic_agent_conf, dic_traffic_env_conf):
         generator = Generator(cnt_round=cnt_round,
                               cnt_generator=cnt_generator,
@@ -120,3 +132,7 @@ class Pipeline:
         generator.generate()
         print("generator_wrapper end")
         return
+
+    # 更新model
+    def updater_wrapper(self, cnt_round, dic_agent_conf, dic_exp_conf, dic_traffic_env_conf, dic_path):
+        pass

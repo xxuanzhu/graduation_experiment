@@ -337,6 +337,16 @@ class Env:
 
         return state
 
+    # TODO 收费作用，里面应包含traffic light steps
+    def price_step(self, action):
+        rnds_traffic_light = 300
+        for i in range(rnds_traffic_light):
+            #TODO
+            action = LightAgent.choose_phase(action)
+
+        next_state, reward, done, _ = self.env.step(action)
+        return next_state, reward, done, average_reward_action_list
+
     def step(self, action):
         step_start_time = time.time()
         list_action_in_sec = [action]

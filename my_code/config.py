@@ -22,6 +22,8 @@ DIC_ENVS = {
 
 # 环境相关config
 DIC_EXPERIMENT_CONFIG = {
+    "LIST_MODEL_NEED_TO_UPDATE":
+        ["MyAgent", ],
     "RUN_COUNTS": 3600,  # 运行counts
     "NUM_ROUNDS": 100,
     "MODEL_NAME": "MyAgent",  # 模型名称
@@ -48,6 +50,7 @@ DIC_MYAGENT_AGENT_CONFIG = {
 
 # 模拟环境config
 DIC_TRAFFIC_ENV_CONF = {
+    "NUM_PRICE_AGENT": 5, # 收费agent数量
     "DEBUG": False,
     "FAST_COMPUTE": True,
     "NEIGHBOR": False,
