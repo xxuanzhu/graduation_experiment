@@ -1,0 +1,12 @@
+{
+  "interval": 0.5,
+  "seed": 0,
+  "dir": "src/test/resources/4x4/",
+  "roadnetFile": "roadnet_4_4.json",
+  "flowFile": "anon_4_4_700_0.6_synthetic.json",
+  "rlTrafficLight": false,
+  "laneChange": true,
+  "saveReplay": true,
+  "roadnetLogFile": "replay_roadnet_4_4.json",
+  "replayLogFile": "replay_roadnet_700_0.6_archive.txt"
+}
